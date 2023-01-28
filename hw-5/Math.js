@@ -1,5 +1,5 @@
 let num = 5;
-let str = '5';
+let str = ' 5 ';
 let bool = true;
 
 let addStrBool = str + bool;
@@ -26,4 +26,5 @@ bool = String(bool);
 bool = Number(bool);
 bool = Boolean(bool);
 
-
+console.log(addStrBool)
+console.log (typeof addStrBool)
