@@ -6,9 +6,10 @@ console.log('No')
 }
 
 
-for (let n = 1000, num = 5; n >= 50; num++) {
-n = n / 2;
+for (let n = 1000, num = 1; n >= 50; num++) {
+n = (n / 2); 
 console.log(n)
+console.log('The desired number of iterations = ' + num);
 }
 
 
