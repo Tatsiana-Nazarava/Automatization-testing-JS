@@ -66,6 +66,8 @@ else if (arr1[2] == arr2[2] && arr1[1] == arr2[1] && arr1[0] == arr2[0]) {
 }
 else if (arr1[3] == arr2[3] && arr1[2] == arr2[2] && arr1[1] == arr2[1] && arr1[0] == arr2[0]) {
     console.log('The index of the repeating number is ' + 4);
+} else {
+    console.log('No matches found')
 }
   
 //5
