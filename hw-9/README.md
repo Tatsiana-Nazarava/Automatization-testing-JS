@@ -1,0 +1,5 @@
+1. Solve using promises and async/await. Make 3 promises, each containing a setTimeout function with a random delay of 1 to 5 seconds. Let the first promise return the number 1, the second - the number 2, the third - the number 3. With the help of Promise.race, wait for the first fulfilled promise to load and display the result of its work on the screen.
+
+2. Make a getNum function that returns a promise that, with a delay of 3 seconds, will display a random number from 1 to 5. Create an async function that will wait for the result of getNum using await, then square it and display it.
+
+3. Make a getNum function that returns a promise that, with a delay of 3 seconds, will display a random number from 1 to 5. Make also a getNum1 function that returns a promise that, with a delay of 5 seconds, will display a random number from 6 to 10. Create an async function , which with await will wait for the result of getNum, then it will wait for the result of getNum1, and then find the sum of the received numbers and display it on the screen.
