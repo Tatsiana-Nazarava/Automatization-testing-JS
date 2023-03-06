@@ -1,0 +1,27 @@
+{
+  "name": "calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter mochawesome --require mochawesome/register",
+    "lint": "eslint --debug ./test.js --fix",
+    "lint:write": "eslint --write ./ --fix && yarn chai",
+    "chai": "chai --write ./*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-chai": "^0.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "mochawesome": "^7.1.3"
+  }
+}
