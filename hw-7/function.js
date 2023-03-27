@@ -50,7 +50,7 @@ function getcountFriday13th(startDate, endDate) {
   const count = getcountFriday13th(startDate, endDate);
   console.log(count);
 
-//3
+//3a
 const enterTheNumber = 10;
 function sumOfRandomNumbers (enterTheNumber, length = 3) {
    let arr = new Array(length);
@@ -68,21 +68,22 @@ function sumOfRandomNumbers (enterTheNumber, length = 3) {
 };
 console.log(sumOfRandomNumbers(enterTheNumber));
 
-let enterTheNumber1 = 10;
-function sumOfRandomNumbers1 (enterTheNumber1, length1 = 3) {
-   let arr1 = new Array(length1);
-   let sum1 = 0;
+//3b
+let enterNumber = 10;
+function sumOfRandomNumbers (enterNumber, length = 3) {
+   let arr = new Array(length);
+   let sum = 0;
    do {
-      for (let i = 0; i < length1; i++) {
-         arr1[i] = Math.random();         
+      for (let i = 0; i < length; i++) {
+         arr[i] = Math.random();         
          }
-      sum1 = arr1.reduce((acc1, value1) => acc1 + value1, 0);
-      let scale1 = ((enterTheNumber1-length1)/sum1);
-      arr1 = arr1.map(value1 => Number (Math.min((value1 * scale1) + 1).toFixed(2)));
-      sum1 = (arr1.reduce((acc1, value1) => acc1 + value1, 0));
+      sum = arr.reduce((acc, value) => acc + value, 0);
+      let scale = ((enterNumber-length)/sum);
+      arr = arr.map(value => Number (Math.min((value * scale) + 1).toFixed(2)));
+      sum = (arr.reduce((acc, value) => acc + value, 0));
            
-   } while (sum1-enterTheNumber1);
-   return arr1;
+   } while (sum-enterNumber);
+   return arr;
 };
-console.log(sumOfRandomNumbers1(enterTheNumber1));
+console.log(sumOfRandomNumbers(enterNumber));
 
