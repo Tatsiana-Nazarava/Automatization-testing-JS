@@ -35,7 +35,7 @@ function rollDice1Player1(min = 1, max = 6) {
 //2
 const date = new Date();
 let numbersOfMonth = 278
-function numberOfFriday13(year) {
+function getNumberOfFriday13(year) {
     var count = 0;
         for (var month=0; month<=numbersOfMonth; month++) {
         var d = new Date(year,month,13);
@@ -45,7 +45,7 @@ function numberOfFriday13(year) {
     }
     return count;                            
 }
-console.log(numberOfFriday13(2023));
+console.log(getNumberOfFriday13(2023));
 
 //3a
 const enterTheNumber = 10;
