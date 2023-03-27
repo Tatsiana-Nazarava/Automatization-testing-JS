@@ -50,7 +50,7 @@ function getcountFriday13th(startDate, endDate) {
   const count = getcountFriday13th(startDate, endDate);
   console.log(count);
 
-//3a
+//3
 const enterTheNumber = 10;
 function sumOfRandomNumbers (enterTheNumber, length = 3) {
    let arr = new Array(length);
@@ -68,7 +68,6 @@ function sumOfRandomNumbers (enterTheNumber, length = 3) {
 };
 console.log(sumOfRandomNumbers(enterTheNumber));
 
-//3b
 let enterTheNumber1 = 10;
 function sumOfRandomNumbers1 (enterTheNumber1, length1 = 3) {
    let arr1 = new Array(length1);
