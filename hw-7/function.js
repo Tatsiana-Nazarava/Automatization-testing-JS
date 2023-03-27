@@ -33,19 +33,22 @@ function rollDice1Player1(min = 1, max = 6) {
   }
 
 //2
-const date = new Date();
-let numbersOfMonth = 278
-function getNumberOfFriday13(year) {
-    var count = 0;
-        for (var month=0; month<=numbersOfMonth; month++) {
-        var d = new Date(year,month,13);
-        if(d.getDay() == 5){
-          count++;
-        }
+function getcountFriday13th(startDate, endDate) {
+    let count = 0;
+    let currentDate = startDate;
+    while (currentDate <= endDate) {
+      if (currentDate.getDay() === 5 && currentDate.getDate() === 13) {
+        count++;
+      }
+      currentDate.setDate(currentDate.getDate() + 1);
     }
-    return count;                            
-}
-console.log(getNumberOfFriday13(2023));
+    return count;
+  }
+  const startDate = new Date(2000, 0, 1); 
+  const endDate = new Date(); 
+  
+  const count = getcountFriday13th(startDate, endDate);
+  console.log(count);
 
 //3a
 const enterTheNumber = 10;
