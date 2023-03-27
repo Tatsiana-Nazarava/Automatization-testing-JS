@@ -33,7 +33,7 @@ function rollDice1Player1(min = 1, max = 6) {
   }
 
 //2
-const date = new Date;
+const date = new Date();
 let numbersOfMonth = 278
 function numberOfFriday13(year) {
     var count = 0;
