@@ -1,17 +1,17 @@
 //1
 let arr = [1, 2, 3, 4, 5, 6];
-function newArrReverse(numbers) {
+function getNewArrReverse(numbers) {
    let value = [];
    for (i = 0; i < numbers.length; i++) {
       value[i] = numbers[(numbers.length - 1) - i];
    }
    return value;
 }
-console.log(newArrReverse(arr));
+console.log(getNewArrReverse(arr));
 
 //2
 let myArray = [3, 67, 15, 105];
-function maxNumber(array) {
+function getMaxNumber(array) {
    let max = myArray[0];
    for (let i = 0; i < myArray.length; i++) {
       if (myArray[i] > max) {
@@ -20,7 +20,7 @@ function maxNumber(array) {
    }
    return max
 }
-console.log(maxNumber(myArray));
+console.log(getMaxNumber(myArray));
 
 //3
 function getFibonachi(M, n, b) {
@@ -72,7 +72,7 @@ else if (arr1[3] == arr2[3] && arr1[2] == arr2[2] && arr1[1] == arr2[1] && arr1[
   
 //5
 let array = new Array(95, 140, 48, 15, 68, 5, 90);
-function sortingArrayTop(a, b) {
+function sortArrayTop(a, b) {
     if (a > b) {
         return 1;
     } else if (b > a) {
@@ -81,7 +81,7 @@ function sortingArrayTop(a, b) {
         return 0;
     }
 }
-console.log(array.sort(sortingArrayTop));
+console.log(array.sort(sortArrayTop));
 
 function sortArrayDown(a, b) {
     return a > b ? -1 : b > a ? 1 : 0;
