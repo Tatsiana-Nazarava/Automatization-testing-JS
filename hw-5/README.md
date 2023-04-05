@@ -1,0 +1,4 @@
+- addition of different types (string+boolean, string+number, number+boolean)
+- multiplication of different types(string * boolean, string * number, number * boolean)
+- division of various types (string/boolean, string/number, number/Boolean)
+- explicit conversion(number, string, boolean)
