@@ -3,30 +3,7 @@ const validator = require('jsonschema');
 const goodInCart = require('../data/goodInCart.v1.json');
 
 describe(`API tests OZ.by`, function () {
-    test('1 - first-get-response: status code should be 200, when add good in cart', async () => {
-        const response = await axios.get('https://oz.by/goods/ajax/html_box.php', {
-            params: { idGoods: '10710424', type: 'html' },
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                Accept: 'application/json, text/javascript, */*; q=0.01',
-            },
-        });
-        expect(response.status).toEqual(200);
-    });
-
-    test('2 - first get-response json schema should be valid', async () => {
-        const response = await axios.get('https://oz.by/goods/ajax/html_box.php', {
-            params: { idGoods: '10710424', type: 'html' },
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                Accept: 'application/json, text/javascript, */*; q=0.01',
-            },
-        });
-        const result = await validator.validate(response.data, goodInCart);
-        expect(result.valid).toEqual(true);
-    });
-
-    test('3 - post-response status code should be 200, when login', async () => {
+    test('1 - post-response status code should be 200, when login', async () => {
         const response = await axios.post('https://auth.oz.by/index.phtml?action=loginByProvider', {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -43,7 +20,7 @@ describe(`API tests OZ.by`, function () {
         expect(response.status).toEqual(200);
     });
 
-    test('4 - Second-get-response: status code should be 200, when go by link of top nav menu', async () => {
+    test('2 - get-response: status code should be 200, when go by link of top nav menu', async () => {
         const response = await axios.get('https://oz.by/home/?gcat=menu&location=/home/&label=menu_link', {
             params: {
                 gcat: 'menu',
@@ -56,5 +33,26 @@ describe(`API tests OZ.by`, function () {
             },
         });
         expect(response.status).toEqual(200);
+    });
+
+    describe('3 - check get-response and its json schema, when add product in cart', function () {
+        let response;
+        beforeAll(async () => {
+            response = await axios.get('https://oz.by/goods/ajax/html_box.php', {
+                params: { idGoods: '10710424', type: 'html' },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    Accept: 'application/json, text/javascript, */*; q=0.01',
+                },
+            });
+        });
+        test('3.1 - status code should be 200', async () => {
+            expect(response.status).toEqual(200);
+        });
+
+        test('3.2 - json schema should be valid', async () => {
+            const result = await validator.validate(response.data, goodInCart);
+            expect(result.valid).toEqual(true);
+        });
     });
 });
