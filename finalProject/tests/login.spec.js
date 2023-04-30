@@ -3,15 +3,17 @@ const MainPage = require('../pageObjects/mainPage');
 const Header = require('../pageObjects/components/header');
 const Login = require('../pageObjects/login');
 
-test.beforeEach(async ({ page }, testInfo) => {
-    const mainPage = new MainPage(page);
-    await mainPage.navigate('https://oz.by/');
-});
-
 test.describe(`test OZ.by website`, async function () {
-test('11 - should Login with Email', async ({ page }) => {
-        const login = new Login(page);
-        const header = new Header(page);
+    let mainPage;
+    let header;
+    let login;
+    test.beforeEach(async ({ page }) => {
+        mainPage = new MainPage(page);
+        header = new Header(page);
+        login = new Login(page);
+        await mainPage.navigate('https://oz.by/');
+    });
+    test('11 - should Login with Email', async () => {
         await header.loginIcon.click();
         await login.goToLoginWithEmail();
         await expect(login.nickname).toContainText('Татьяна_Н');

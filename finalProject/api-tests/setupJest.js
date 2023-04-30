@@ -1,5 +1,3 @@
-const validator = require('jsonschema');
-
 expect.extend({
     toBeValidSchema(response, schema) {
         const schemaValidationResult = validator.validate(response.data, schema);

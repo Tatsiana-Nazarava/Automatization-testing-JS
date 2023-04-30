@@ -14,19 +14,14 @@ class Login {
     }
 
     async goToLoginWithEmail(username, password) {
+        username = 'tatyana_kravec@inbox.ru';
+        password = 'HZ63R4';
         await this.loginFormMobile.isEnabled();
         await this.loginFormEmail.click();
-        await this.username.fill('tatyana_kravec@inbox.ru');
-        await this.password.fill('HZ63R4');
+        await this.username.fill(username);
+        await this.password.fill(password);
         await this.loginButtonForEmailForm.isEnabled();
         await this.loginButtonForEmailForm.click();
-    }
-
-    async goToLoginWithMobile(mobile, securityCode) {
-        await this.loginFormMobile.isEnabled();
-        await this.phoneNumber.fill(mobile);
-        await this.loginButtonForPhoneForm.isEnabled();
-        await this.loginButtonForPhoneForm.click();
     }
 }
 

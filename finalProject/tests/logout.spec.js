@@ -4,16 +4,19 @@ const Header = require('../pageObjects/components/header');
 const Login = require('../pageObjects/login');
 const PersonalPage = require('../pageObjects/personalPage');
 
-test.beforeEach(async ({ page }, testInfo) => {
-    const mainPage = new MainPage(page);
-    await mainPage.navigate('https://oz.by/');
-});
-
 test.describe(`test OZ.by website - Logout`, async function () {
-test('12 - should Sign out', async ({ page }) => {
-        const login = new Login(page);
-        const header = new Header(page);
-        const personalPage = new PersonalPage(page);
+    let mainPage;
+    let header;
+    let login;
+    let personalPage;
+    test.beforeEach(async ({ page }) => {
+        mainPage = new MainPage(page);
+        login = new Login(page);
+        header = new Header(page);
+        personalPage = new PersonalPage(page);
+        await mainPage.navigate('https://oz.by/');
+    });
+    test('12 - should Sign out', async () => {
         await header.loginIcon.click();
         await login.goToLoginWithEmail();
         await header.accountLink.click();

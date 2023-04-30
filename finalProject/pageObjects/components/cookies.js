@@ -11,7 +11,7 @@ class Cookies {
         await this.page.waitForSelector(acceptCookies);
         await this.page.hover(acceptCookies);
         await this.page.click(acceptCookies);
-}
+    }
 }
 
 module.exports = Cookies;
