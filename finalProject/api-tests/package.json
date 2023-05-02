@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "pretty": "prettier --write ./*.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,8 @@
     "jest-html-reporters": "^3.1.4",
     "jest-junit": "^16.0.0",
     "jsonschema": "^1.4.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
   }
 }
