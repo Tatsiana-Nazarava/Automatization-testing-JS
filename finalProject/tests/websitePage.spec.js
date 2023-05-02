@@ -25,8 +25,8 @@ test.describe(`test OZ.by website`, async function () {
     });
 
     test('20 - should open page with sales by clicking to the link in header', async () => {
-        await header.specialOfferLink.click();
-        await expect(topNavMenu.breadCrumbLinkLast).toContainText('Скидки');
+        await header.salesLink.click();
+        await expect(topNavMenu.breadCrumbLinkLast).toContainText('Акции и скидки');
     });
 
     test('21 - should open page with message window by clicking to the link in header', async () => {

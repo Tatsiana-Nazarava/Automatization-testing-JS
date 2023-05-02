@@ -8,7 +8,8 @@
     "extends": [
         "airbnb-base",
         "plugin:playwright/playwright-test",
-        "eslint:recommended"
+        "eslint:recommended",
+        "prettier"
     ],
     "overrides": [],
     "parserOptions": {
@@ -125,6 +126,7 @@
     },
     "plugins": [
         "playwright",
+        "prettier",
         "import"
     ],
     "globals": {
