@@ -1,0 +1,37 @@
+{
+  "name": "hw.19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js",
+    "prewdio": "rimraf --glob ./allure-report/* ./allure-results/*",
+    "postwdio": "npx allure generate",
+    "lint": "eslint --debug ./test/tests.js --fix",
+    "lint:write": "eslint --write ./ --fix && yarn chai",
+    "chai": "chai --write ./*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^8.7.0",
+    "@wdio/cli": "^8.7.0",
+    "@wdio/local-runner": "^8.7.0",
+    "@wdio/mocha-framework": "^8.7.0",
+    "@wdio/spec-reporter": "^8.7.0",
+    "chromedriver": "^112.0.0",
+    "eslint-plugin-chai-expect": "^3.0.0",
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-wait-for": "^3.0.3"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.21.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.37.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "rimraf": "^4.4.1",
+    "rm": "^0.1.8"
+  }
+}
